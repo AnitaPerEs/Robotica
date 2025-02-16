@@ -1,24 +1,55 @@
 \section{Sensores}
-En \LaTeX, las imágenes se pueden incluir utilizando el paquete \texttt{graphicx}. 
-Para añadir una imagen en texstudio, es posible arrastrarla directamente en el editor, lo que obtendrá como resultado lo mostrado en la \autoref{fig:insertarimagen}.
+Los sensores son dispositivos que permiten a los robots percibir su entorno y obtener información sobre su posición, movimiento, temperatura, proximidad, presión, entre otros aspectos. Estos sensores convierten datos físicos en señales eléctricas que el robot puede procesar para tomar decisiones o realizar tareas.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{img/insertarImagen}
-	\caption{Opciones al insertar una imagen}
-	\label{fig:insertarimagen}
-\end{figure}
+Se clasifican en:
 
-Algunas opciones clave incluyen:
-
-\begin{itemize}
-	\item \textbf{Tamaño de la imagen}: Se puede definir un ancho o alto relativo a la caja de texto o se puede usar un tamaño en pixeles (px), centímetros (cm) o el ancho de la letra M (em).
-	\item \textbf{Centrado}: Se puede marcar la opción para que la imagen aparezca centrada automáticamente.
-	\item \textbf{Uso del entorno `figure'}: Permite que la imagen tenga una numeración automática y pueda referenciarse en el texto con \texttt{\textbackslash ref\{\}} o \texttt{\textbackslash autoref\{\}}.
-	\item \textbf{Posicionamiento (`h`, `t`, `b`, `p`)}: Al presionar la flecha de la derecha, podemos añadir las opciones que determinan la posición de la imagen en el documento, como después del texto o arriba de la página, etc. Si igual vamos a referenciar las figuras, es innecesario que estén exactamente donde fueron mencionadas ya que eso deja muchos espacios en blanco.
-	\item \textbf{Leyenda Largo}: permite poner una descripción de la imagen en el lugar que elegimos (debería de estar debajo).
-	\item \textbf{Etiqueta}: nos servirá para referenciarla. 
-\end{itemize}
+	\subsection{Sensores Externos}
+		\begin{enumerate}
+			\item \textbf{Posición}
+			\begin{enumerate}
+				\item Lineal
+				\item Rotativo
+			\end{enumerate}
+			
+			\item \textbf{Velocidad}
+			\begin{enumerate}
+				\item Todos los sensores de posición
+				\item Tacómetro
+				\item Sensor de efecto Hall
+			\end{enumerate}
+			
+			\item \textbf{Aceleración}
+			\begin{enumerate}
+				\item Todos los sensores de fuerza
+			\end{enumerate}
+			
+			\item \textbf{Fuerza}
+			\begin{enumerate}
+				\item Galgas extensométricas
+				\item Interruptores de límite
+				\item Interruptores piezoeléctricos
+			\end{enumerate}
+		\end{enumerate}
+		
+	\subsection{Sensores Internos}
+	 \begin{enumerate}
+		\item \textbf{Tipo de contacto}
+		\begin{enumerate}
+			\item Interruptores de límite
+			\item Interruptores neumáticos
+			\item Sensores piezoeléctricos
+			\item Transductores de presión
+		\end{enumerate}
+		\item \textbf{Tipo sin contacto}
+		\begin{enumerate}
+			\item Sensores de proximidad
+			\item Sensores de efecto Hall
+			\item Sensores de microondas
+			\item Sensores ultrasónicos
+			\item Sensores láser
+			\item Sensores de visión
+		\end{enumerate}
+	\end{enumerate}
 
 Para usar dos imágenes como en \autoref{fig:mascotas}, se utilizó \texttt{subfloat}.
 % Dos imágenes de mascotas
