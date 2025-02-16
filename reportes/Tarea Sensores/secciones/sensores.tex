@@ -114,9 +114,52 @@ Se clasifican en:
 					\label{fig:mascotas}
 				\end{figure}
 
-
+\vspace{60mm}
 			\item \textbf{LVDT}
-			\item \textbf{Resólver}
+			\\
+		El transformador diferencial lineal variable (LVDT) es uno de los transductores de desplazamiento más utilizados, especialmente cuando se requiere alta precisión. Este dispositivo genera una señal de corriente alterna (CA) cuya magnitud está directamente relacionada con el desplazamiento de un núcleo móvil.
+		
+		El principio de funcionamiento del LVDT se basa en un núcleo férrico que se mueve dentro de un campo magnético, el cual se genera de manera similar al de un transformador convencional. El sistema consta de una bobina primaria y dos bobinas secundarias idénticas dispuestas alrededor del núcleo. A medida que el núcleo cambia de posición con respecto a las bobinas, la distribución del campo magnético varía, lo que modifica la amplitud del voltaje inducido en las bobinas secundarias en función del desplazamiento del núcleo a lo largo de un determinado rango.\cite{saha2010robotics}
+		\\
+		
+		\textbf{Ventajas:}
+		\begin{itemize}
+			\item Alta linealidad y sensibilidad.
+			\item Respuesta dinámica elevada.
+			\item Bajo rozamiento y desgaste mecánico.
+			\item Usado en mediciones de pequeños desplazamientos con alta precisión.
+			\item Se emplea en instrumentos de laboratorio, pruebas estructurales y monitoreo de vibraciones.
+		\end{itemize}
+		
+		\begin{figure}[!h]
+			\centering
+			\subfloat[Sensores de posición]{%
+				\includegraphics[width=0.3\textwidth]{Velocidadsensoresdeposición.jpg}%
+				\label{fig:sensores}
+			}
+			\caption{Imagen de LVDT}
+			\label{fig:figura_sensores}
+		\end{figure}
+\medspace		
+
+			
+			\item \textbf{Resólver y Sincronizador}\\
+			Mientras que los encoders generan señales digitales, los sincronizadores y resólvers proporcionan señales analógicas como salida. Estos dispositivos están compuestos por un eje giratorio (rotor) y una carcasa estacionaria (estator). Para su procesamiento en una computadora, sus señales deben convertirse a formato digital mediante un convertidor analógico-digital (ADC).
+			
+			 Los sincronizadores y resólvers utilizan rotores con un solo devanado que giran dentro de estatores fijos. En un sincronizador sencillo, el estator posee tres devanados dispuestos a 120° entre sí y conectados en configuración “Y”. Los resólvers, en cambio, tienen solo dos devanados en el estator, orientados a 90°. Debido a esta diferencia, \textit {los sincronizadores son más complejos y costosos de fabricar en comparación con los resólvers.}
+			
+			Los resólvers modernos pueden prescindir de escobillas, ya que emplean un transformador para acoplar las señales del rotor al estator. En este diseño, el devanado primario del transformador se encuentra en el estator y el secundario en el rotor. Sin embargo, algunos resólvers aún utilizan escobillas o anillos colectores tradicionales para transmitir la señal. Los resólvers sin escobillas son más resistentes, ya que eliminan el riesgo de desgaste mecánico, lo que prolonga su vida útil, limitándola únicamente por el desgaste de los cojinetes.\cite{saha2010robotics}
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[Sensores de posición]{%
+		\includegraphics[width=0.3\textwidth]{Velocidadsensoresdeposición.jpg}%
+		\label{fig:sensores}
+	}
+	\caption{Imagen de Résolver y Sincronizador}
+	\label{fig:figura_sensores}
+\end{figure}
+		
 				\end{enumerate}
 			\end{enumerate}
 			
@@ -172,7 +215,7 @@ Se clasifican en:
 			\begin{enumerate}
 				\item Todos los sensores de fuerza: De manera parecida a las mediciones de velocidad que se dan a partir de la información de los sensores de posición, pueden encontrarse las aceleraciones como la razón de cambio respecto al tiempo de las velocidades obtenidas por los sensores de velocidad o calculado a partir de las informaciones de posición. Pero ésta no es una manera efi ciente para calcular la aceleración, puesto que impondrá una carga de trabajo pesada sobre la computadora, lo que puede reducir la velocidad de operación del sistema. Otra forma de medir la aceleración es calculando la fuerza que resulta de multiplicar masa por aceleración. \cite{saha2010robotics}\\
 			\end{enumerate}
-				\begin{figure}[h]Acelerac
+				\begin{figure}[h]
 				\centering
 				\subfloat[Aceleración]{%
 					\includegraphics[width=0.25\textwidth]{Aceleración.jpg}%
