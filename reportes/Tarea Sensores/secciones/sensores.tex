@@ -6,14 +6,117 @@ Se clasifican en:
 	\subsection{Sensores Internos}
 		\begin{enumerate}
 			\item \textbf{Posición}
+			
+			Los sensores de posición miden la posición de cada articulación, es decir, el ángulo de articulación de un robot. A partir de dichos ángulos puede encontrarse la configuración del ejecutor final, y ubicar su posición y orientación por medio de la cinemática directa.\cite{saha2010robotics}\\
+			
+			
 			\begin{enumerate}
 				\item Lineal y rotativo
 				\begin{enumerate}
-					\item Encóder incremental
-					\item Encóder absoluto
-					\item Potenciómetro
-					\item LVDT
-					\item Resólver
+					\item \textbf {Éncoders}
+					 
+			Es un dispositivo óptico digital que convierte el movimiento en una secuencia de pulsos digitales. Mediante el conteo de un solo bit o la decodificación de un conjunto de bits, los pulsos pueden convertirse en medidas relativas o absolutas. De este modo, los encóders son de tipo incremental o absoluto. Además, cada tipo puede ser lineal y rotatorio a su vez.\cite{saha2010robotics}\\
+			
+			\begin{enumerate}
+				\item \underline{Éncoder lineal incremental:} \\
+				Tiene una
+				escala transparente con una retícula opaca. El tamaño del espesor de las líneas de la retícula y el del espacio entre ellas son iguales. De un lado, la escala se equipa con una fuente de luz y un lente de condensador. Del otro, hay celdas sensibles a la luz. La resistencia de las celdas (fotodiodos) disminuye cada vez que reciben un rayo de luz. De este modo, se genera un pulso cada vez que un rayo de luz es atravesado por la línea opaca. Este pulso se introduce en el controlador que actualiza a un contador \cite{saha2010robotics}.
+				\\
+		\begin{figure}[h]
+	\centering
+	\subfloat[Éncoder lineal incremental]{%
+		\includegraphics[width=0.3\textwidth]{Velocidadsensoresdeposición.jpg}%
+		\label{fig:Encoder_lineal_incremental}
+		\cite{}
+	}
+	\hfill
+\end{figure}				
+\\
+\\
+\\
+				\item \underline{Éncoder lineal absoluto:} \\
+				En principio, se parece al encóder lineal incremental.  La diferencia es que da un valor absoluto de la distancia recorrida en cualquier momento. Así,
+				las posibilidades de perder los pulsos a altas velocidades son menores. La salida es digital
+				en este caso. La escala se marca con una secuencia de tiras opacas y transparentes. Si el bloque opaco que aparece en la escala de la ilustración (b)  representa 1 (uno) y el bloque transparente 0 (cero), entonces la columna de la extrema izquierda mostrará un número binario como 00000, es decir, un valor decimal de 0, y la columna siguiente mostrará un número binario 00001, es decir, una valor decimal de 1.\cite{saha2010robotics}
+				
+				\begin{figure}[h]
+					\centering
+					\subfloat[Perro]{%
+						\includegraphics[width=0.4\textwidth]{perro.jpg}%
+						\label{fig:perro}
+					}
+					\hfill
+					\subfloat[Gato]{%
+						\includegraphics[width=0.4\textwidth]{gato.jpg}%
+						\label{fig:gato}
+					}
+					\caption{Imagen de encoder lineal absoluto}
+					\label{fig:mascotas}
+				\end{figure}
+				
+				\item \underline{Éncoder rotativo lineal:} \\
+				Se parece al encóder incremental lineal, con la diferencia
+				de que las retículas se encuentran en este caso en un disco. El valor común del espesor de los espacios transparentes es igual a 20 micrones. Hay dos conjuntos de líneas de retículas en diferentes círculos que detectan el sentido de rotación, lo que permite mejorar la precisión del sensor. Hay otro círculo que sólo contiene una marca de retícula. Éste se usa para la medición del número
+				de revoluciones completadas.\cite{saha2010robotics}
+				\\
+		\begin{figure}[h]
+	\centering
+	\subfloat[Éncoder lineal incremental]{%
+		\includegraphics[width=0.3\textwidth]{Velocidadsensoresdeposición.jpg}%
+		\label{fig:Encoder_lineal_incremental}
+		\cite{}
+	}
+	\hfill
+\end{figure}				
+\\
+\\
+\\
+\\
+\\
+\\
+
+				\item \underline{Éncoder rotativo absoluto:} \\
+				El disco se divide en un número de tiras circulares, y cada tira tiene segmentos de arco definidos, como se muestra en la figura. Este sensor proporciona directamente la salida digital (absoluta). El encóder se monta directamente sobre el eje del motor o con algún engranaje para aumentar la precisión de medición. Con el fin de evitar ruidos en este encóder, a veces se usa una escala gris. Un código gris, a diferencia de los códigos binarios, permite que sólo uno de los bits binarios en una secuencia de código cambie entre líneas radiales. También impide que se confundan los cambios en la salida binaria del encóder absoluto cuando el encóder oscila entre puntos. \cite {saha2010robotics}
+				\\
+				\begin{figure}[h]
+					\centering
+					\subfloat[Perro]{%
+						\includegraphics[width=0.4\textwidth]{perro.jpg}%
+						\label{fig:perro}
+					}
+					\hfill
+					\subfloat[Gato]{%
+						\includegraphics[width=0.4\textwidth]{gato.jpg}%
+						\label{fig:gato}
+					}
+					\caption{Imagen de encoder rotativo absoluto}
+					\label{fig:mascotas}
+				\end{figure}
+			\end{enumerate}
+		
+					\item \textbf{Potenciómetro}
+					 
+					Es un dispositivo de resistencia variable que expresa desplazamientos lineales o angulares en términos de voltaje, tal como se muestra en las figuras a) y b), respectivamente. Consiste en una clavija deslizante que hace contacto con un elemento resistivo; conforme se mueve este punto de contacto, la resistencia entre el contacto deslizante y las conexiones de los extremos del dispositivo cambia en proporción al desplazamiento, x y  para potenciómetros lineales
+					y angulares, respectivamente. \cite{saha2010robotics}
+					
+				\begin{figure}[h]
+					\centering
+					\subfloat[Perro]{%
+						\includegraphics[width=0.4\textwidth]{perro.jpg}%
+						\label{fig:perro}
+					}
+					\hfill
+					\subfloat[Gato]{%
+						\includegraphics[width=0.4\textwidth]{gato.jpg}%
+						\label{fig:gato}
+					}
+					\caption{Imagen de potenciometro}
+					\label{fig:mascotas}
+				\end{figure}
+
+
+			\item \textbf{LVDT}
+			\item \textbf{Resólver}
 				\end{enumerate}
 			\end{enumerate}
 			
