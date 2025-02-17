@@ -245,8 +245,7 @@ Se clasifican en:
 			
 			\item \textbf{Fuerza}
 			
-			Una balanza de resorte es un ejemplo de un sensor de
-			fuerza en donde se aplica una fuerza, por ejemplo, el peso, al platillo de balanza que causa un desplazamiento, es decir, el resorte se estira. El desplazamiento es entonces una medida de la fuerza. Existen otros tipos de sensores de fuerza, por ejemplo, con base en galgas, utilizando el sensor de efecto Hall, etcétera. \cite{saha2010robotics}\\
+			Una balanza de resorte es un ejemplo de un sensor de fuerza en donde se aplica una fuerza, por ejemplo, el peso, al platillo de balanza que causa un desplazamiento, es decir, el resorte se estira. El desplazamiento es entonces una medida de la fuerza. Existen otros tipos de sensores de fuerza, por ejemplo, con base en galgas, utilizando el sensor de efecto Hall, etcétera. \cite{saha2010robotics}\\
 			\begin{enumerate}
 				\item Galgas extensométricas: Es un componente eléctrico que convierte la deformación en un cambio de resistencia eléctrica. La deformación se puede medir mediante tracción, compresión, torsión, cortante o flexión. La resistencia eléctrica de la mayoría de las galgas extensométricas cambia debido a la tensión mecánica, la tensión térmica o la tensión residual. Aplicando una galga extensiométrica a un material podemos medir su tensión, los cambios de forma o cuándo se produce la deformación. \cite{Galgas}\\
 				
@@ -271,7 +270,7 @@ Se clasifican en:
 				
 				\begin{figure}[h]
 					\centering
-					\subfloat[EfectoHall]{%
+					\subfloat[Efecto Hall]{%
 						\includegraphics[width=0.25\textwidth]{EfectoHall.jpg}%
 						\label{fig:EfectoHall}
 						\cite{Efecto_Hall}
@@ -283,10 +282,10 @@ Se clasifican en:
 				
 					\begin{figure}[h]
 					\centering
-					\subfloat[Piezoelectrico]{%
-						\includegraphics[width=0.25\textwidth]{Piezoelectrico.jpg}%
+					\subfloat[Interruptor Piezoeléctrico]{%
+						\includegraphics[width=0.25\textwidth]{InterruptoresPiezoeléctricos.jpg}%
 						\label{fig:Piezoelectrico}
-						\cite{Piezoelectrico}
+						\cite{InterruptorPiezoeléctrico}
 					}
 					\hfill
 				\end{figure}
@@ -298,10 +297,65 @@ Se clasifican en:
 	 \begin{enumerate}
 		\item \textbf{Tipo de contacto}
 		\begin{enumerate}
-			\item Interruptores de límite
-			\item Interruptores neumáticos
-			\item Sensores piezoeléctricos
-			\item Transductores de presión
+			\item Interruptores de límite: Los interruptores de límite mecánicos son dispositivos de detección de contacto ampliamente utilizados para detectar la presencia o posición de objetos en aplicaciones industriales.
+			
+			Los interruptores de límite ofrecen alta precisión en términos de exactitud y repetibilidad, principalmente porque hacen contacto directo con el objetivo que se va a detectar.  Cuando un objeto entra en contacto con la palanca del interruptor de límite (o émbolo), la palanca mueve una distancia “previa al recorrido” al “punto de operación” donde se disparan los contactos. El movimiento de la palanca más allá de este punto se denomina “desplazamiento excesivo”.  Estos términos se representan visualmente en el siguiente diagrama.
+			
+			El término “interruptor de límite” deriva del funcionamiento del propio dispositivo. A medida que un objeto hace contacto con el operador del interruptor, mueve el actuador a un límite donde los contactos eléctricos del interruptor cambian de estado. \cite{InterruptoresLimite}
+			\\\\\\\\
+			
+			\begin{figure}[h]
+				\centering
+				\subfloat[Interruptores de Limite]{%
+					\includegraphics[width=0.25\textwidth]{InterruptoresdeLimite.jpg}%
+					\label{fig:Interruptores de Limite}
+					\cite{InterruptoresdeLimite}
+				}
+				\hfill
+			\end{figure}
+			
+			\item Interruptores neumáticos: Un interruptor neumático es un tipo de dispositivo de conmutación que utiliza aire para funcionar. Cuando se comprime, el interruptor neumático envía un soplo o una bocanada de aire a lo largo de un tubo de PVC hasta un interruptor de aire. El movimiento del aire activará el interruptor de aire, que creará el circuito eléctrico y activará un dispositivo. \cite{Neumático}
+			
+			\begin{figure}[h]
+				\centering
+				\subfloat[Interruptor neumático]{%
+					\includegraphics[width=0.25\textwidth]{Neumático.jpg}%
+					\label{fig:Interruptor neumático}
+					\cite{InterruptorNeumático}
+				}
+				\hfill
+			\end{figure}
+			
+			\item Sensores piezoeléctricos: Un sensor piezoeléctrico es un dispositivo basado en la teoría del efecto piezoeléctrico, el cual es utilizado para medir presión, aceleración, tensión o fuerza; transformando las lecturas en señales eléctricas.
+			
+			Los componentes básicos de un sensor piezoeléctrico son el material piezoeléctrico, placa de metal y los cables (positivo y negativo).
+			
+			El principio de funcionamiento se debe procesar el material para reordenar sus cargas, porque estas cargas inicialmente están desordenadas y es imposible generar electricidad. Para obtener propiedades piezoeléctricas, el material debe someterse a un fuerte campo eléctrico para secuenciar las cargas.
+			
+			Siendo eliminado el campo eléctrico, la carga se liberará y cuando se aplique presión, la carga se reorganizará para provocar la carga deseada. Con estos sensores no debe exceder la temperatura máxima, mejor conocida como «temperatura de Curie», ya que por encima de la temperatura máxima, las cargas volverán a su estado inicial en un estado caótico, y estas cargas no se generarán. \cite{SensoresPiezoelectricos} \\
+			
+					\begin{figure}[h]
+					\centering
+					\subfloat[Sensor piezoeléctrico]{%
+						\includegraphics[width=0.25\textwidth]{Piezoelectrico.jpg}%
+						\label{fig:Piezoelectrico}
+						\cite{Piezoelectrico}
+					}
+					\hfill
+				\end{figure}
+			
+			\item Transductores de presión: El transductor y el transmisor de presión recibe numerosas aplicaciones y actualmente en el mercado pueden encontrarse modelos que funcionan bien para diferentes aplicaciones. Por ejemplo, los transmisores de presión barométrica permiten medir las presiones atmosféricas, los de presión hidráulica son útiles para medir la presión en línea, los compuestos miden presiones positivas y negativas, mientras que los sumergibles permiten monitorear niveles o profundidad, entre otros diseñados para propósitos especiales. \cite{TransductorPresión} \\
+			
+			\begin{figure}[h]
+				\centering
+				\subfloat[Transductor de presión]{%
+					\includegraphics[width=0.25\textwidth]{Presión.jpg}%
+					\label{fig:Presión}
+					\cite{Presión}
+				}
+				\hfill
+			\end{figure}
+			
 		\end{enumerate}
 		\item \textbf{Tipo sin contacto}
 		\begin{enumerate}
@@ -367,20 +421,16 @@ Se clasifican en:
 			\end{figure}
 		\end{enumerate}
 	\end{enumerate}
-
-Para usar dos imágenes como en \autoref{fig:mascotas}, se utilizó \texttt{subfloat}.
-% Dos imágenes de mascotas
-\begin{figure}[h]
-	\centering
-	\subfloat[Perro]{%
-		\includegraphics[width=0.4\textwidth]{perro.jpg}%
-		\label{fig:perro}
-	}
-	\hfill
-	\subfloat[Gato]{%
-		\includegraphics[width=0.4\textwidth]{gato.jpg}%
-		\label{fig:gato}
-	}
-	\caption{Imagen de dos mascotas}
-	\label{fig:mascotas}
-\end{figure}
+	
+	\subsection{Otros}
+		\begin{enumerate}
+		\item \textbf{Giroscopio}:
+		
+		\item \textbf{Acelerómetro}:
+		
+		\item \textbf{Magnetómetro}:
+		
+		\item \textbf{LiDAR}:
+		
+		\end{enumerate}
+		
