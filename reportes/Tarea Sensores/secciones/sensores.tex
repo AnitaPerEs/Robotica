@@ -186,12 +186,12 @@ Se clasifican en:
 			
 			\begin{enumerate}
 				\item Todos los sensores de posición:
-				Básicamente todos los sensores de posición, cuando se utilizan con ciertos límites de tiempo, pueden dar la velocidad, por ejemplo, el número de pulsos proporcionados por un encóder de posición incremental dividido entre el tiempo consumido en hacerlo. Sin embargo, este método impone una carga computacional sobre el controlador, que podrá estar ocupado por algunas otras operaciones.\\
+				Básicamente todos los sensores de posición, cuando se utilizan con ciertos límites de tiempo, pueden dar la velocidad, por ejemplo, el número de pulsos proporcionados por un encóder de posición incremental dividido entre el tiempo consumido en hacerlo. Sin embargo, este método impone una carga computacional sobre el controlador, que podrá estar ocupado por algunas otras operaciones. \cite{saha2010robotics}\\\\
 		
 		\begin{figure}[!ht]
 			\centering
-			\subfloat[Sensores de posición]{%
-				\includegraphics[width=0.4\textwidth]{Velocidadsensoresdeposición.jpg}%
+			\subfloat[Funcionamiento de un sensor de posición]{%
+				\includegraphics[width=0.6\textwidth]{Velocidadsensoresdeposición.jpg}%
 				\label{fig:sensores}
 				\cite{Sensordeposición}
 				
@@ -204,10 +204,10 @@ Se clasifican en:
 				
 				\begin{figure}[h]
 					\centering
-					\subfloat[Tacómetro]{%
-						\includegraphics[width=0.3\textwidth]{Tacómetro.jpg}%
+					\subfloat[Diagrama esquemático de un tacómetro]{%
+						\includegraphics[width=0.7\textwidth]{Tacómetro.jpg}%
 						\label{fig:Tacómetro}
-						\cite{Tacómetro}
+						\cite{saha2010robotics}
 					}
 					\hfill
 				\end{figure}
@@ -216,12 +216,13 @@ Se clasifican en:
 				
 			\begin{figure}[h]
 				\centering
-				\subfloat[EfectoHall]{%
-					\includegraphics[width=0.25\textwidth]{Hall.jpg}%
+				\subfloat[Principio de un sensor de efecto Hall]{%
+					\includegraphics[width=0.7\textwidth]{Hall.jpg}%
 					\label{fig:Hall}
-					\cite{EfectoHall}
+					\cite{Hall}
 				}
 				\hfill
+				\\
 			\end{figure}
 			
 			\end{enumerate}
@@ -236,7 +237,7 @@ Se clasifican en:
 				\begin{figure}[h]
 				\centering
 				\subfloat[Aceleración]{%
-					\includegraphics[width=0.25\textwidth]{Aceleración.jpg}%
+					\includegraphics[width=0.7\textwidth]{Aceleración.jpg}%
 					\label{fig:Aceleración}
 					\cite{Aceleración}
 				}
@@ -247,35 +248,40 @@ Se clasifican en:
 			
 			Una balanza de resorte es un ejemplo de un sensor de fuerza en donde se aplica una fuerza, por ejemplo, el peso, al platillo de balanza que causa un desplazamiento, es decir, el resorte se estira. El desplazamiento es entonces una medida de la fuerza. Existen otros tipos de sensores de fuerza, por ejemplo, con base en galgas, utilizando el sensor de efecto Hall, etcétera. \cite{saha2010robotics}\\
 			\begin{enumerate}
-				\item Galgas extensométricas: Es un componente eléctrico que convierte la deformación en un cambio de resistencia eléctrica. La deformación se puede medir mediante tracción, compresión, torsión, cortante o flexión. La resistencia eléctrica de la mayoría de las galgas extensométricas cambia debido a la tensión mecánica, la tensión térmica o la tensión residual. Aplicando una galga extensiométrica a un material podemos medir su tensión, los cambios de forma o cuándo se produce la deformación. \cite{Galgas}\\
+				\item Galgas extensométricas: Es un componente eléctrico que convierte la deformación en un cambio de resistencia eléctrica. La deformación se puede medir mediante tracción, compresión, torsión, cortante o flexión. La resistencia eléctrica de la mayoría de las galgas extensométricas cambia debido a la tensión mecánica, la tensión térmica o la tensión residual. Aplicando una galga extensiométrica a un material podemos medir su tensión, los cambios de forma o cuándo se produce la deformación. \cite{Galgas} \\
 				
 				\begin{figure}[h]
 					\centering
-					\subfloat[Galgas]{%
-						\includegraphics[width=0.25\textwidth]{Galgas.jpg}%
+					\subfloat[Galgas extensométricas]{%
+						\includegraphics[width=0.35\textwidth]{Galgas.jpg}%
 						\label{fig:Galgas}
-						\cite{GalgasImagen}
 					}
-					\\
-					\hfill
-					\\
-
+					\hspace{0.5cm} % Espacio entre imágenes (ajusta el valor si es necesario)
+					\subfloat[Funcionamiento de las galgas]{%
+						\includegraphics[width=0.35\textwidth]{GalgasFuncionamiento.jpg}%
+						\label{fig:GalgasFuncionamiento}
+					}
+					\caption{Ejemplo de galgas extensométricas y su funcionamiento. \cite{GalgasImagen}.}
+					\label{fig:GalgasGeneral}
+					
 				\end{figure}
-				
+	
 				\item Interruptores de efecto Hall: Un interruptor de efecto Hall funciona midiendo la intensidad de un campo magnético cercano. Cuando un campo magnético se aplica cerca del material sensibilizado por el efecto Hall, éste produce una diferencia de potencial en los bordes opuestos, que se puede medir y utilizar para activar o desactivar el interruptor. La sensibilidad y la precisión del interruptor dependen del material utilizado y de las condiciones del campo magnético.\cite{Efecto_Hall}\\
-				\\
-				\\
-				\\
-				\\
 				
 				\begin{figure}[h]
 					\centering
-					\subfloat[Efecto Hall]{%
-						\includegraphics[width=0.25\textwidth]{EfectoHall.jpg}%
-						\label{fig:EfectoHall}
-						\cite{Efecto_Hall}
+					\subfloat[Interruptor de efecto Hall]{%
+						\includegraphics[width=0.4\textwidth]{Hall.jpg}%
+						\label{fig:Interruptor de Efecto Hall}
 					}
-					\hfill
+					\hspace{0.5cm} % Espacio entre imágenes (ajusta el valor si es necesario)
+					\subfloat[Funcionamiento del efecto Hall]{%
+						\includegraphics[width=0.4\textwidth]{HallFuncionamiento.jpg}%
+						\label{fig:EfectoHall}
+					}
+					\caption{Ejemplo de interruptor de efecto Hall y su funcionamiento. \cite{EfectoHall}.}
+					\label{fig:HallGeneral}
+					
 				\end{figure}
 				
 				\item Interruptores piezoeléctricos: Un material piezoeléctrico presenta un fenómeno conocido como efecto piezoeléctrico. Este efecto señala que cuando cristales elásticos asimétricos se deforman mediante una fuerza, se desarrollará un potencial eléctrico dentro de la red cristalina deformada. \cite{saha2010robotics}\\
@@ -283,11 +289,18 @@ Se clasifican en:
 					\begin{figure}[h]
 					\centering
 					\subfloat[Interruptor Piezoeléctrico]{%
-						\includegraphics[width=0.25\textwidth]{InterruptoresPiezoeléctricos.jpg}%
+						\includegraphics[width=0.4\textwidth]{InterruptoresPiezoeléctricos.jpg}%
 						\label{fig:Piezoelectrico}
-						\cite{InterruptorPiezoeléctrico}
 					}
-					\hfill
+					\hspace{0.5cm} % Espacio entre imágenes (ajusta el valor si es necesario)
+					\subfloat[Funcionamiento de interruptor piezoeléctrico]{%
+					\includegraphics[width=0.4\textwidth]{PiezoelectricoFuncionamiento.jpg}%
+					\label{fig:FuncionamientoPiezoeléctrico}
+					}
+					\caption{Ejemplo de interruptor piezoeléctrico y su funcionamiento. \cite{Piezoelectrico}.}
+					\label{fig:PiezoeléctricoGeneral}
+					
+					
 				\end{figure}
 				
 			\end{enumerate}
@@ -302,16 +315,20 @@ Se clasifican en:
 			Los interruptores de límite ofrecen alta precisión en términos de exactitud y repetibilidad, principalmente porque hacen contacto directo con el objetivo que se va a detectar.  Cuando un objeto entra en contacto con la palanca del interruptor de límite (o émbolo), la palanca mueve una distancia “previa al recorrido” al “punto de operación” donde se disparan los contactos. El movimiento de la palanca más allá de este punto se denomina “desplazamiento excesivo”.  Estos términos se representan visualmente en el siguiente diagrama.
 			
 			El término “interruptor de límite” deriva del funcionamiento del propio dispositivo. A medida que un objeto hace contacto con el operador del interruptor, mueve el actuador a un límite donde los contactos eléctricos del interruptor cambian de estado. \cite{InterruptoresLimite}
-			\\\\\\\\
 			
 			\begin{figure}[h]
 				\centering
 				\subfloat[Interruptores de Limite]{%
-					\includegraphics[width=0.25\textwidth]{InterruptoresdeLimite.jpg}%
+					\includegraphics[width=0.24\textwidth]{InterruptoresdeLimite.jpg}%
 					\label{fig:Interruptores de Limite}
-					\cite{InterruptoresdeLimite}
 				}
-				\hfill
+				\hspace{0.5cm} % Espacio entre imágenes (ajusta el valor si es necesario)
+				\subfloat[Funcionamiento de interruptor piezoeléctrico]{%
+				\includegraphics[width=0.7\textwidth]{LimiteFuncion.jpg}%
+				\label{fig:FuncionamientoPiezoeléctrico}
+				}
+				\caption{Ejemplo de interruptor piezoeléctrico y su funcionamiento. \cite{InterruptoresdeLimite}.}
+				\label{fig:PiezoeléctricoGeneral}
 			\end{figure}
 			
 			\item Interruptores neumáticos: Un interruptor neumático es un tipo de dispositivo de conmutación que utiliza aire para funcionar. Cuando se comprime, el interruptor neumático envía un soplo o una bocanada de aire a lo largo de un tubo de PVC hasta un interruptor de aire. El movimiento del aire activará el interruptor de aire, que creará el circuito eléctrico y activará un dispositivo. \cite{Neumático}
@@ -345,7 +362,7 @@ Se clasifican en:
 				\end{figure}
 			
 			\item Transductores de presión: El transductor y el transmisor de presión recibe numerosas aplicaciones y actualmente en el mercado pueden encontrarse modelos que funcionan bien para diferentes aplicaciones. Por ejemplo, los transmisores de presión barométrica permiten medir las presiones atmosféricas, los de presión hidráulica son útiles para medir la presión en línea, los compuestos miden presiones positivas y negativas, mientras que los sumergibles permiten monitorear niveles o profundidad, entre otros diseñados para propósitos especiales. \cite{TransductorPresión} \\
-			
+			\\
 			\begin{figure}[h]
 				\centering
 				\subfloat[Transductor de presión]{%
