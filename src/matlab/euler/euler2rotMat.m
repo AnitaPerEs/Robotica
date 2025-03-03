@@ -1,15 +1,35 @@
 function R = euler2rotMat(euler, secuencia)
 %euler2rotMat Convierte la orientación en ángulos de Euler en una matriz de rotación.
 %
-% Ejemplo de uso:
-% euler = [pi/2; -pi/4; pi/6]
-% secuencia = "XYZ"
-% R = euler2rotMat(euler, secuencia)
+% Parámetros de entrada:
+% euler: Vector de ángulos de Euler [phi; theta; psi] en radianes
+% secuencia: Cadena que define el orden de rotaciones, por ejemplo "XYZ"
 
-phi = euler(1,:);      % phi:   rotación alrededor del eje X
-theta = euler(2,:);    % theta: rotación alrededor del eje Y
-psi = euler(3,:);      % psi:   rotación alrededor del eje Z
+% Extraer los ángulos de Euler
+phi = euler(1);      % Rotación alrededor del eje X
+theta = euler(2);    % Rotación alrededor del eje Y
+psi = euler(3);      % Rotación alrededor del eje Z
+
+% Matrices de rotación básicas
+Rx = [1, 0, 0;
+      0, cos(phi), -sin(phi);
+      0, sin(phi), cos(phi)];
+
+Ry = [cos(theta), 0, sin(theta);
+      0, 1, 0;
+      -sin(theta), 0, cos(theta)];
+
+Rz = [cos(psi), -sin(psi), 0;
+      sin(psi), cos(psi), 0;
+      0, 0, 1];
+
+% Calcular la matriz de rotación dependiendo de la secuencia
 if secuencia == "XYZ"
-    R =
+    R = Rz * Ry * Rx; % Aplicar la rotación en el orden correcto
+else
+    error('Secuencia no soportada. Usa "XYZ".');
 end
+end
+
+
 
