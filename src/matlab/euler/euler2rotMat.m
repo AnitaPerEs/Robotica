@@ -4,7 +4,6 @@ function R = euler2rotMat(euler, secuencia)
 % Parámetros de entrada:
 % euler: Vector de ángulos de Euler [phi; theta; psi] en radianes
 % secuencia: Cadena que define el orden de rotaciones, por ejemplo "XYZ"
-
 % Extraer los ángulos de Euler
 phi = euler(1);      % Rotación alrededor del eje X
 theta = euler(2);    % Rotación alrededor del eje Y
@@ -25,7 +24,7 @@ Rz = [cos(psi), -sin(psi), 0;
 
 % Calcular la matriz de rotación dependiendo de la secuencia
 if secuencia == "XYZ"
-    R = Rz * Ry * Rx; % Aplicar la rotación en el orden correcto
+    R = Rx*Ry*Rz; % Aplicar la rotación en el orden correcto
 else
     error('Secuencia no soportada. Usa "XYZ".');
 end
