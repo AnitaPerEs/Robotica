@@ -22,7 +22,7 @@ Rz = [cos(psi), -sin(psi), 0;
       sin(psi), cos(psi), 0;
       0, 0, 1];
 
-% Calcular la matriz de rotación dependiendo de la secuencia
+ %Calcular la matriz de rotación dependiendo de la secuencia
 if secuencia == "XYZ"
     R = Rx*Ry*Rz; % Aplicar la rotación en el orden correcto
 else
