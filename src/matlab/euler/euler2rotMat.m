@@ -24,10 +24,14 @@ Rz = [cos(psi), -sin(psi), 0;
 
  %Calcular la matriz de rotación dependiendo de la secuencia
 if secuencia == "XYZ"
+<<<<<<< HEAD
     R = Rx*Ry*Rz; % Aplicar la rotación en el orden correcto
 else
     error('Secuencia no soportada. Usa "XYZ".');
 end
+=======
+    R = Rx(phi)*Ry(theta)*Rz(psi);
+>>>>>>> c8394d135c41f1ea6722438fb963d210d34f6d64
 end
 
 
