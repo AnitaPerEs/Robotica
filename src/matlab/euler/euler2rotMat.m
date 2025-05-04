@@ -24,12 +24,10 @@ Rz = [cos(psi), -sin(psi), 0;
 
  %Calcular la matriz de rotación dependiendo de la secuencia
 if secuencia == "XYZ"
-
-    R = Rx*Ry*Rz; % Aplicar la rotación en el orden correcto
+   R = Rx*Ry*Rz; % Aplicar la rotación en el orden correcto
 else
     error('Secuencia no soportada. Usa "XYZ".');
 end
-
 
 
 
