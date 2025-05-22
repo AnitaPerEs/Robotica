@@ -67,7 +67,7 @@ devel/
 *.lof
 *.lot
 *.lol
-*/_minted-Tesis/
+*/_minted/
 */build/
 
 
