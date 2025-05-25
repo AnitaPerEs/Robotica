@@ -1,5 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{n}{p\PYGZus{}end}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{T}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{end}\PYG{p}{);}
-\PYG{n}{p0}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{A0}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{);}
-\PYG{n}{z0}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{A0}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{);}
-\end{MintedVerbatim}
