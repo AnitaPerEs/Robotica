@@ -7,15 +7,6 @@ A lo largo de esta sección, se llevaron a cabo simulaciones que permitieron obt
 
 El análisis se divide en tres etapas principales: cinemática directa, cinemática diferencial y cinemática inversa. Cada una de ellas se desarrolla en detalle en las secciones subsecuentes, junto con los resultados obtenidos y sus respectivas gráficas y animaciones.
 
-% Si no quieres ponerle título al código, puedes dejarlo en blanco.
-\begin{matlabcode}{matlab}
-	function [q_sol, p_sol] = cinematica_inv(r, p_des, tol, max_iter, alpha, numMuestras)
-\end{matlabcode}
-
-\begin{terminal}{bash: Instalar minted en python con pip}
-	pip install latexminted==0.5.1
-\end{terminal}
-
 \subsection{Cinemática Directa} \label{subsec:cinematica_directa}
 
 La cinemática directa consiste en determinar la posición y orientación del efector final a partir de los valores de las variables articulares del robot. Para el brazo robótico en estudio, esta operación se basa en la tabla de parámetros Denavit-Hartenberg (DH) obtenida del modelo CAD, la cual permite construir las matrices de transformación homogénea necesarias para describir la configuración espacial del efector final. \\
@@ -54,9 +45,8 @@ Finalmente, se calculan la velocidad lineal y angular del efector final:
 
 Este procedimiento se repite para cada instante de tiempo para obtener la trayectoria completa del efector final.
 
-Los resultados obtenidos con este procedimiento se presentan en la sección de Resultados (\autoref{chap:resultados}).
+Los resultados obtenidos con este procedimiento se presentan en la sección de Resultados, especificamente en la Figura~\ref{fig:CinematicaDirecta}.
 
-%Explicar las partes importantes del código de la cinemática directa.
 %Para ver los resultados, ir al \autoref{chap:resultados}: Resultados, o determinada figura.
 \subsection{Cinemática Diferencial}
 
@@ -188,5 +178,4 @@ Este bloque calcula un perfil suave para el movimiento articular entre las posic
 
 \bigskip
 
-Explicar las partes importantes del código de la cinemática inversa.
-Para ver los resultados, ir al \autoref{chap:resultados}: Resultados, o determinada figura.
+Los resultados obtenidos con este procedimiento se presentan en la sección de Resultados, especificamente en la Figura~\ref{fig:CinematicaInversa}.
