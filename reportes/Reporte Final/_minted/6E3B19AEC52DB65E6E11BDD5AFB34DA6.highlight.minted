@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{vel\PYGZus{}linear}\PYG{p}{(:,}\PYG{n}{k}\PYG{p}{)}\PYG{+w}{  }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{Jv}\PYG{p}{(:,:,}\PYG{n}{k}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{q}\PYG{p}{(:,}\PYG{n}{k}\PYG{p}{)}\PYG{o}{/}\PYG{n}{dt}\PYG{p}{);}
+\PYG{n}{vel\PYGZus{}angular}\PYG{p}{(:,}\PYG{n}{k}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{Jw}\PYG{p}{(:,:,}\PYG{n}{k}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{q}\PYG{p}{(:,}\PYG{n}{k}\PYG{p}{)}\PYG{o}{/}\PYG{n}{dt}\PYG{p}{);}
+\end{MintedVerbatim}
