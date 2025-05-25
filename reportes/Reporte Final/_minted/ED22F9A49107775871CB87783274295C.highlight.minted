@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{function}\PYG{+w}{ }\PYG{n+nf}{[Jv, Jw] = jac\PYGZus{}geometrico}\PYG{p}{(}r\PYG{p}{)}
+\PYG{n}{A0}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{.}\PYG{n}{A0}\PYG{p}{;}
+\PYG{n}{T}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{.}\PYG{n}{T}\PYG{p}{;}
+\PYG{n}{NGDL}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{.}\PYG{n}{NGDL}\PYG{p}{;}
+\PYG{n}{tipo}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{r}\PYG{p}{.}\PYG{n}{tipo}\PYG{p}{;}
+\end{MintedVerbatim}

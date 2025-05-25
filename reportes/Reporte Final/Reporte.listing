@@ -1,1 +1,4 @@
-	pip install latexminted==0.5.1
+	delta_q = abs(q_sol(:,2) - q_sol(:,1));
+	t_final = max(2 * delta_q ./ robot.dqMax);
+	numSamples = 201;
+	[q, dq, ddq, t, pp] = trapveltraj(q_sol, numSamples, 'Acceleration', robot.ddqMax, 'EndTime', t_final);

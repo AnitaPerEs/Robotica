@@ -1,25 +1,192 @@
 \section{Proceso de Cinemática} \label{sec:proceso_cinematica}
 
-Aquí explicarán su código. Si quieren mostrar una parte, pueden hacerlo de la siguiente forma
+Para el análisis del comportamiento del manipulador, se implementaron los procesos de cinemática utilizando herramientas de simulación en MATLAB, con base en la tabla de parámetros Denavit-Hartenberg (DH) desarrollada a partir del modelo CAD del robot.
+Las simulaciones se llevaron a cabo empleando plantillas proporcionadas por el docente, adaptadas a la configuración específica del robot utilizado por el equipo.
+
+A lo largo de esta sección, se llevaron a cabo simulaciones que permitieron obtener, visualizar y validar el comportamiento del efector final y de las articulaciones del robot frente a distintas trayectorias y configuraciones deseadas. Estos procesos resultaron fundamentales para garantizar que el modelo matemático del robot se comportara de forma coherente con su diseño físico.
+
+El análisis se divide en tres etapas principales: cinemática directa, cinemática diferencial y cinemática inversa. Cada una de ellas se desarrolla en detalle en las secciones subsecuentes, junto con los resultados obtenidos y sus respectivas gráficas y animaciones.
 
 % Si no quieres ponerle título al código, puedes dejarlo en blanco.
 \begin{matlabcode}{matlab}
 	function [q_sol, p_sol] = cinematica_inv(r, p_des, tol, max_iter, alpha, numMuestras)
 \end{matlabcode}
 
-Pero solo háganlo en partes muy específicas (las que van a explicar en ese momento). No copien todo el código ya que eso está en GitHub.
-
-Si les sale el error \texttt{latexminted no se reconoce como un comando interno o externo, programa o archivo por lotes ejecutable}, deben tener instalado python y usar el siguiente comando.
 \begin{terminal}{bash: Instalar minted en python con pip}
 	pip install latexminted==0.5.1
 \end{terminal}
 
-\subsection{Cinemática Directa}
-Explicar las partes importantes del código de la cinemática directa.
-Para ver los resultados, ir al \autoref{chap:resultados}: Resultados, o determinada figura.
+\subsection{Cinemática Directa} \label{subsec:cinematica_directa}
+
+La cinemática directa consiste en determinar la posición y orientación del efector final a partir de los valores de las variables articulares del robot. Para el brazo robótico en estudio, esta operación se basa en la tabla de parámetros Denavit-Hartenberg (DH) obtenida del modelo CAD, la cual permite construir las matrices de transformación homogénea necesarias para describir la configuración espacial del efector final. \\
+
+Primero, se actualiza la configuración del robot con los valores articulares actuales:
+
+\begin{matlabcode}{matlab}
+	robot = actualizar_robot(robot, q(:,k));
+\end{matlabcode}
+
+Luego, se extraen la posición y la matriz de rotación del efector final:
+
+\begin{matlabcode}{matlab}
+	posicion(:,k) = robot.T(1:3,4,end);
+	R(:,:,k) = robot.T(1:3,1:3,end);
+\end{matlabcode}
+
+A continuación, se obtiene la orientación en ángulos de Euler a partir de la matriz de rotación:
+
+\begin{matlabcode}{matlab}
+	orientacion(:,k) = rotMat2euler(R(:,:,k), secuencia);
+\end{matlabcode}
+
+Con la configuración actualizada, se calcula el Jacobiano geométrico:
+
+\begin{matlabcode}{matlab}
+	[Jv(:,:,k), Jw(:,:,k)] = jac_geometrico(robot);
+\end{matlabcode}
+
+Finalmente, se calculan la velocidad lineal y angular del efector final:
+
+\begin{matlabcode}{matlab}
+	vel_linear(:,k)  = Jv(:,:,k) * (q(:,k)/dt);
+	vel_angular(:,k) = Jw(:,:,k) * (q(:,k)/dt);
+\end{matlabcode}
+
+Este procedimiento se repite para cada instante de tiempo para obtener la trayectoria completa del efector final.
+
+Los resultados obtenidos con este procedimiento se presentan en la sección de Resultados (\autoref{chap:resultados}).
+
+%Explicar las partes importantes del código de la cinemática directa.
+%Para ver los resultados, ir al \autoref{chap:resultados}: Resultados, o determinada figura.
 \subsection{Cinemática Diferencial}
-Explicar las partes importantes del código de la cinemática diferencial.
-Para ver los resultados, ir al \autoref{chap:resultados}: Resultados, o determinada figura.
+
+La cinemática diferencial describe cómo se relacionan las velocidades articulares del robot con las velocidades lineales y angulares del efector final. Para ello, se utiliza el Jacobiano geométrico, que se compone de dos partes:
+\begin{itemize}
+	\item $J_v$: Parte traslacional.
+	\item $J_w$: Parte rotacional.
+\end{itemize}
+
+A continuación se presenta el código que calcula el Jacobiano paso a paso, con su respectiva explicación.
+
+Antes de comenzar, se extraen de la estructura del robot las matrices necesarias para calcular el Jacobiano: la transformación base, las transformaciones globales de cada articulación, el número de grados de libertad, y los tipos de articulaciones.
+
+\begin{matlabcode}{matlab}
+	function [Jv, Jw] = jac_geometrico(r)
+	A0 = r.A0;
+	T = r.T;
+	NGDL = r.NGDL;
+	tipo = r.tipo;
+\end{matlabcode}
+
+Se inicializan las matrices vacías para el Jacobiano traslacional ($J_v$) y rotacional ($J_w$), con ceros.
+
+\begin{matlabcode}{matlab}
+	Jv = zeros(3, NGDL);
+	Jw = zeros(3, NGDL);
+\end{matlabcode}
+
+Se obtiene la posición final del efector desde la última transformación. También se definen el origen y el eje $z$ del sistema base, tomados desde la matriz $A0$.
+
+\begin{matlabcode}{matlab}
+	p_end = T(1:3, 4, end);
+	p0 = A0(1:3, 4);
+	z0 = A0(1:3, 3);
+\end{matlabcode}
+
+Se recorre cada articulación del robot. Si es la primera, se usa el sistema base como referencia; en caso contrario, se usa el marco anterior para calcular los vectores necesarios.
+
+\begin{matlabcode}{matlab}
+	for i = 1:NGDL
+	if i == 1
+	p_prev = p0;
+	z_prev = z0;
+	else
+	p_prev = T(1:3, 4, i-1);
+	z_prev = T(1:3, 3, i-1);
+	end
+\end{matlabcode}
+
+Dependiendo del tipo de articulación (revoluta 'r' o prismática 'p'), se calcula la columna $i$ del Jacobiano de forma distinta:
+\begin{itemize}
+	\item Si es revoluta:
+	\begin{itemize}
+		\item $Jv(:,i) = z_{i-1} \times (p_{end} - p_{i-1})$.
+		\item $Jw(:,i) = z_{i-1}$.
+	\end{itemize}
+	\item Si es prismática:
+	\begin{itemize}
+		\item $Jv(:,i) = z_{i-1}$.
+		\item $Jw(:,i) = [0; 0; 0]$.
+	\end{itemize}
+\end{itemize}
+
+\begin{matlabcode}{matlab}
+	switch tipo(i)
+	case 'r'
+	Jv(:, i) = cross(z_prev, (p_end - p_prev));
+	Jw(:, i) = z_prev;
+	case 'p'
+	Jv(:, i) = z_prev;
+	Jw(:, i) = [0; 0; 0];
+	otherwise
+	error('Tipo de junta inválido, debe ser ''r'' o ''p''.');
+	end
+\end{matlabcode}
+
 \subsection{Cinemática Inversa}
+
+Para determinar las configuraciones articulares que permiten alcanzar posiciones deseadas del efector final, se implementa un método iterativo de cinemática inversa. A continuación se describen las partes principales del código:
+
+\bigskip
+
+Definición de parámetros para el método iterativo:
+
+\begin{matlabcode}{matlab}
+	tol = 1e-6;         % Tolerancia para el error en la posición
+	max_iter = 100;     % Número máximo de iteraciones permitidas
+	alpha = 1.0;        % Factor de corrección en cada iteración
+	numSamples = 100;   % Número de configuraciones iniciales aleatorias
+\end{matlabcode}
+
+Estos parámetros controlan la precisión, límite de iteraciones y la cantidad de puntos de partida para la búsqueda de soluciones.
+
+\bigskip
+
+Inicialización de matrices para guardar las soluciones obtenidas:
+
+\begin{matlabcode}{matlab}
+	q_sol = zeros(robot.NGDL, n);   % Matriz para almacenar las soluciones articulares
+	p_sol = zeros(3, n);            % Matriz para almacenar las posiciones calculadas
+\end{matlabcode}
+
+Aquí, \texttt{n} corresponde al número de puntos en la trayectoria deseada.
+
+\bigskip
+
+Cálculo iterativo de la cinemática inversa para cada punto de la trayectoria:
+
+\begin{matlabcode}{matlab}
+	for i = 1:n
+	[q_sol(:,i), p_sol(:,i)] = cinematica_inv(robot, pos_puntos(:,i), tol, max_iter, alpha, numSamples);
+	end
+\end{matlabcode}
+
+Se recorre cada posición deseada y se calcula la configuración articular correspondiente usando la función \texttt{cinematica\_inv}.
+
+\bigskip
+
+Generación de la trayectoria articular con perfil trapezoidal de velocidad:
+
+\begin{matlabcode}{matlab}
+	delta_q = abs(q_sol(:,2) - q_sol(:,1));
+	t_final = max(2 * delta_q ./ robot.dqMax);
+	numSamples = 201;
+	[q, dq, ddq, t, pp] = trapveltraj(q_sol, numSamples, 'Acceleration', robot.ddqMax, 'EndTime', t_final);
+\end{matlabcode}
+
+Este bloque calcula un perfil suave para el movimiento articular entre las posiciones calculadas, respetando las velocidades y aceleraciones máximas.
+
+\bigskip
+
 Explicar las partes importantes del código de la cinemática inversa.
 Para ver los resultados, ir al \autoref{chap:resultados}: Resultados, o determinada figura.
