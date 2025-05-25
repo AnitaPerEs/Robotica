@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{tol}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mf}{1e\PYGZhy{}6}\PYG{p}{;}\PYG{+w}{         }\PYG{c}{\PYGZpc{} Tolerancia para el error en la posición}
+\PYG{n}{max\PYGZus{}iter}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{p}{;}\PYG{+w}{     }\PYG{c}{\PYGZpc{} Número máximo de iteraciones permitidas}
+\PYG{n+nb}{alpha}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mf}{1.0}\PYG{p}{;}\PYG{+w}{        }\PYG{c}{\PYGZpc{} Factor de corrección en cada iteración}
+\PYG{n}{numSamples}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{p}{;}\PYG{+w}{   }\PYG{c}{\PYGZpc{} Número de configuraciones iniciales aleatorias}
+\end{MintedVerbatim}
