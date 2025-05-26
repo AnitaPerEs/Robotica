@@ -66,4 +66,8 @@ robot = struct( ...
         'A0', A0, ...             (4x4) Matriz de transformación homogenea inicial
         'T', zeros(4,4,NGDL), ...(4x4xn) Matriz de transformación homogenea de cada paso
         'q', q);
+    
+% Agrega las funciones necesarias para cinemática inversa
+robot.fkine = @(q_in) fkine_dh(robot, q_in);
+robot.jacobian = @(q_in) jacobian_dh(robot, q_in);
         
