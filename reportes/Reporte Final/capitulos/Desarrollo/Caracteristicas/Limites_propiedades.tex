@@ -1,3 +1,13 @@
 \subsection{Límites y propiedades dinámicas de las articulaciones} \label{subsec:limites_propiedades}
 
-Básicamente, explicarán lo que aparece en la \autoref{tab:parametros_robot}: Parámetros de Denavit Hartenberg y límites del robot, específicamente lo que aparece después de \code{tipo}. Como no completamos la tarea de dinámica,. pueden comentar esta subsección del documento principal.
+\begin{itemize}
+	\item \textbf{$q_\text{min}$ y $q_\text{max}$}: Para los ejes rotacionales, los valores están entre $-90^\circ$ y $180^\circ$, lo que ofrece un amplio rango sin sobrepasar los límites físicos del robot. En el caso del eslabón prismático, el rango va de $1$ a $10$ cm, suficiente para permitir extensión sin riesgo de desalineación o colisión.
+	
+	\item \textbf{$\dot{q}_\text{max}$ (velocidad máxima)}: Se estableció en $180^\circ/\text{s}$ para los eslabones rotacionales y $3$ cm/s para el prismático. Estos valores permiten movimientos ágiles sin comprometer la precisión ni generar inestabilidad.
+	
+	\item \textbf{$\ddot{q}_\text{max}$ (aceleración máxima)}: Se fijó en $360^\circ/\text{s}^2$ para los eslabones rotacionales y $6$ cm/s$^2$ para el prismático. Estos límites evitan movimientos bruscos y ayudan a mantener una transición suave entre posiciones.
+	
+	\item \textbf{$\tau$ (torque)}: Los valores de torque son bajos porque el robot es pequeño y las masas que mueve son reducidas. Los torques fueron calculados considerando la masa de cada eslabón, su longitud y la distancia al eje de rotación.
+	
+	\item \textbf{$\mu_s$ (fricción estática) y $\mu_k$ (fricción cinética)}: Se asignaron valores de $0.1$ y $0.2$, respectivamente. Estos coeficientes simulan la resistencia inicial y durante el movimiento, lo cual es importante para calcular el torque necesario de forma realista en la simulación.
+\end{itemize}
