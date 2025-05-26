@@ -22,6 +22,38 @@ Además, se realizó la simulación en los entornos \textit{Gazebo} y \textit{RV
 	\label{fig:CinematicaDirecta}
 \end{figure}
 
+En la Figura~\ref{fig:cinematica_inversa} se pueden observar los resultados obtenidos mediante la simulación en MATLAB de la cinemática inversa del robot.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{INVERSAR.jpg}
+	\caption{Resultados de la simulación de la cinemática inversa del robot}
+	\label{fig:cinematica_inversa}
+\end{figure}
+
+En la Figura~\ref{fig:inversa_graficas} se presenta los resultados obtenidos de la cinemática inversa del robot manipulador. A la izquierda se visualizan las trayectorias en el espacio cartesiano del efector final, mientras que a la derecha se muestran los perfiles articulares requeridos para lograr dichas trayectorias. Esta información permite validar que la solución generada por el algoritmo de cinemática inversa cumple con los requerimientos de movimiento tanto a nivel espacial como articular.
+
+En la subfigura (a) se ilustran las gráficas de posición, velocidad y aceleración lineal del efector final sobre los ejes $X$, $Y$ y $Z$, así como su orientación angular y sus respectivas velocidades y aceleraciones angulares. Estas curvas reflejan el comportamiento deseado de la trayectoria en el espacio cartesiano, y sirven para validar el rendimiento del algoritmo de cinemática inversa desde la perspectiva del movimiento del efector final.
+
+En la subfigura (b) muestra el comportamiento de las articulaciones del robot. Las gráficas representan la evolución de las posiciones, velocidades y aceleraciones para las tres articulaciones revolutas ($\theta_1$, $\theta_2$, $\theta_3$) y la articulación prismática ($d_4$). Es posible verificar que los perfiles articulares están dentro de los límites establecidos, y que siguen un movimiento suave y continuo, lo cual es importante para asegurar el correcto funcionamiento físico del robot.
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{INVERSAGRAFICAR.jpg}
+		\caption*{(a) Resultados cartesianos de la cinemática inversa}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{INVERSAARTICULACIONESR.jpg}
+		\caption*{(b) Trayectoria articular generada por la cinemática inversa}
+	\end{minipage}
+	\caption{Gráficas de la cinemática inversa: comportamiento cartesiano y articular}
+	\label{fig:inversa_graficas}
+\end{figure}
+
 En la Figura~\ref{fig:simulacion_gazebo} se observa al robot modelado en el entorno \textit{Gazebo}, donde se lleva a cabo una simulación física que incluye efectos como la gravedad, colisiones y dinámica. Esta simulación permitió verificar que el robot sigue correctamente la trayectoria establecida, sin desviaciones, oscilaciones anómalas ni interferencias con el entorno.
 
 \begin{figure}[H]
@@ -31,7 +63,7 @@ En la Figura~\ref{fig:simulacion_gazebo} se observa al robot modelado en el ento
 	\label{fig:simulacion_gazebo}
 \end{figure}
 
-En la Figura ~\ref{fig:GazeboYrviz} se presenta una vista combinada del robot en \textit{Gazebo} y \textit{RViz}. Mientras que Gazebo ejecuta la física de la simulación, RViz permite la visualización en tiempo real de los datos publicados por los nodos ROS, incluyendo la cinemática del robot y la trayectoria del efector final. En esta visualización, se confirma que el modelo de RViz reproduce de manera precisa los movimientos generados en Gazebo, lo cual indica que la cinemática directa y la publicación de transformaciones se implementaron correctamente.
+En la Figura~\ref{fig:GazeboYrviz} se presenta una vista combinada del robot en \textit{Gazebo} y \textit{RViz}. Mientras que Gazebo ejecuta la física de la simulación, RViz permite la visualización en tiempo real de los datos publicados por los nodos ROS, incluyendo la cinemática del robot y la trayectoria del efector final. En esta visualización, se confirma que el modelo de RViz reproduce de manera precisa los movimientos generados en Gazebo, lo cual indica que la cinemática directa y la publicación de transformaciones se implementaron correctamente.
 
 Ambos entornos muestran que el robot cumple con el objetivo de seguir la trayectoria deseada, validando la correcta integración del modelo cinemático y su ejecución en ROS.
 
