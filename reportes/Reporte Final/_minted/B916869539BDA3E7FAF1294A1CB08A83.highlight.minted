@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{Jv}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{NGDL}\PYG{p}{);}
+\PYG{n}{Jw}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{NGDL}\PYG{p}{);}
+\end{MintedVerbatim}
