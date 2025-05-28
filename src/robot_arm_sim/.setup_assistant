@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: NuestroRobot4
+    relative_path: urdf/NuestroRobot4.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/NuestroRobot4.srdf
+  CONFIG:
+    author_name: Anita
+    author_email: l21330669@hermosillo.tecnm.mx
+    generated_timestamp: 1748045889
